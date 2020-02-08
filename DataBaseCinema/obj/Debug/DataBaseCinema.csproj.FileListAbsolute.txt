@@ -1,0 +1,17 @@
+C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\bin\Debug\DataBaseCinema.exe.config
+C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\bin\Debug\DataBaseCinema.exe
+C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\bin\Debug\DataBaseCinema.pdb
+C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\obj\Debug\DataBaseCinema.csprojAssemblyReference.cache
+C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\obj\Debug\DataBaseCinema.Properties.Resources.resources
+C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\obj\Debug\DataBaseCinema.csproj.GenerateResource.cache
+C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\obj\Debug\DataBaseCinema.exe
+C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\obj\Debug\DataBaseCinema.pdb
+C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\obj\Debug\DataBaseCinema.GeneralForm.resources
+C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\bin\Debug\EntityFramework.dll
+C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\bin\Debug\EntityFramework.xml
+C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\obj\Debug\DataBaseCinema.csproj.CopyComplete
+C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\obj\Debug\DataBaseCinema.AddForm.resources
+C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\obj\Debug\DataBaseCinema.DelForm.resources
+C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\obj\Debug\DataBaseCinema.ChangeForm.resources
