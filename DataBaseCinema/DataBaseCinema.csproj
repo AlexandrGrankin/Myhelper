@@ -57,45 +57,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddForm.cs">
+    <Compile Include="Data\form\AddForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddForm.Designer.cs">
+    <Compile Include="Data\form\AddForm.Designer.cs">
       <DependentUpon>AddForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChangeForm.cs">
+    <Compile Include="Data\form\ChangeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChangeForm.Designer.cs">
+    <Compile Include="Data\form\ChangeForm.Designer.cs">
       <DependentUpon>ChangeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DBCinema.cs" />
-    <Compile Include="DelForm.cs">
+    <Compile Include="Data\table\DBCinema.cs" />
+    <Compile Include="Data\form\DelForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DelForm.Designer.cs">
+    <Compile Include="Data\form\DelForm.Designer.cs">
       <DependentUpon>DelForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GeneralForm.cs">
+    <Compile Include="Data\form\GeneralForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GeneralForm.Designer.cs">
+    <Compile Include="Data\form\GeneralForm.Designer.cs">
       <DependentUpon>GeneralForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyTableAdapter.cs" />
-    <Compile Include="MyTableCreate.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Data\table\MyTableAdapter.cs" />
+    <Compile Include="Data\table\MyTableCreate.cs" />
+    <Compile Include="Data\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddForm.resx">
+    <EmbeddedResource Include="Data\form\AddForm.resx">
       <DependentUpon>AddForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChangeForm.resx">
+    <EmbeddedResource Include="Data\form\ChangeForm.resx">
       <DependentUpon>ChangeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DelForm.resx">
+    <EmbeddedResource Include="Data\form\DelForm.resx">
       <DependentUpon>DelForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GeneralForm.resx">
+    <EmbeddedResource Include="Data\form\GeneralForm.resx">
       <DependentUpon>GeneralForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -107,7 +107,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="packages.config" />
+    <None Include="Data\packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -119,8 +119,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="Data\App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

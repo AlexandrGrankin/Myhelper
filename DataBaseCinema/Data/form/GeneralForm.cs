@@ -10,8 +10,6 @@ using System.Windows.Forms;
 using System.Data.Entity;
 using static DataBaseCinema.Program;
 
-//Доделать выборку строки (подстветка её полностью) и получение 
-
 namespace DataBaseCinema
 {
     public partial class GeneralForm : Form
@@ -23,7 +21,7 @@ namespace DataBaseCinema
         {
             InitializeComponent();
 
-            //Создали талицы
+            //Создали таблицы
             MyTableCreate allCinemaTables = new MyTableCreate(allCinemaTable, allCinemaPage, "Все фирмы");
             MyTableCreate expectCheckTables = new MyTableCreate(expectCheckTable, expectCheckPage, "Ожидают проверки");
             MyTableCreate passCheckTables = new MyTableCreate(passCheckTable, passCheckPage, "Прошли проверку");
