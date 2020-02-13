@@ -15,3 +15,4 @@ C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\obj\Debug\DataBas
 C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\obj\Debug\DataBaseCinema.AddForm.resources
 C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\obj\Debug\DataBaseCinema.DelForm.resources
 C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\obj\Debug\DataBaseCinema.ChangeForm.resources
+C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\obj\Debug\DataBaseCinema.Data.form.ImportForm.resources

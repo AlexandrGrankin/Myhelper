@@ -37,6 +37,9 @@ namespace DataBaseCinema
 
             //Задаем размер столбцам 
             dataGridGlobal.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridGlobal.Columns[0].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            dataGridGlobal.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
             dataGridGlobal.Columns[1].Width = 38;
             dataGridGlobal.Columns[2].Width = 50;
             dataGridGlobal.Columns[3].Width = 50;
@@ -64,6 +67,11 @@ namespace DataBaseCinema
                 MyData.value.YearCheckNext,
                 MyData.value.Planned
                 ));
+            updateHeaders();
+        }
+        public void add(DBCinema dBCinema)
+        {
+            data.Add(dBCinema);
             updateHeaders();
         }
 

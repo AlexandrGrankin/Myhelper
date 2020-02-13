@@ -21,7 +21,10 @@ namespace DataBaseCinema
 
         public class MyData
         {
+            //Промежуточное значение для Добавить Изменить Удалить
             public static DBCinema value { get; set; }
+            //Промежуточное значение для импорта
+            public static List<DBCinema> listValue = new List<DBCinema>();
             public static int day  { get; set; }
             public static int mounth { get; set; }
             public static int year { get; set; }

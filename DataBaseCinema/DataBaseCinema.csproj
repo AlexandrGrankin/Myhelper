@@ -69,6 +69,12 @@
     <Compile Include="Data\form\ChangeForm.Designer.cs">
       <DependentUpon>ChangeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data\form\ImportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\form\ImportForm.Designer.cs">
+      <DependentUpon>ImportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\table\DBCinema.cs" />
     <Compile Include="Data\form\DelForm.cs">
       <SubType>Form</SubType>
@@ -97,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Data\form\GeneralForm.resx">
       <DependentUpon>GeneralForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\form\ImportForm.resx">
+      <DependentUpon>ImportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

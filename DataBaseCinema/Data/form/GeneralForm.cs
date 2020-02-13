@@ -33,8 +33,8 @@ namespace DataBaseCinema
         private void GeneralForm_Load(object sender, EventArgs e)
         {
             //Настройка TextBox
-            textSearch.Multiline = true;
-            textSearch.ScrollBars = ScrollBars.Vertical;
+            //comboBox1.Multiline = true;
+            //comboBox1.ScrollBars = ScrollBars.Vertical;
 
             //Установка даты глобально
             MyData.day = DateTime.Now.Day;
@@ -80,7 +80,7 @@ namespace DataBaseCinema
                 DataGridView table = (DataGridView)indexTable;
 
                 //Надо искать активную вкладку
-                textSearch.Text = tableAdapter.getNameSelectElement(indexElement, table.CurrentRow.Index).NameCinema;
+                comboBox1.Text = tableAdapter.getNameSelectElement(indexElement, table.CurrentRow.Index).NameCinema;
             }
             catch(Exception exp)
             {
@@ -99,7 +99,7 @@ namespace DataBaseCinema
                 DataGridView table = (DataGridView)indexTable;
 
                 //Надо искать активную вкладку
-                textSearch.Text = tableAdapter.getNameSelectElement(indexElement, table.CurrentRow.Index).NameCinema;
+                comboBox1.Text = tableAdapter.getNameSelectElement(indexElement, table.CurrentRow.Index).NameCinema;
             }
             catch (Exception exp)
             {
@@ -118,7 +118,7 @@ namespace DataBaseCinema
                 DataGridView table = (DataGridView)indexTable;
 
                 //Надо искать активную вкладку
-                textSearch.Text = tableAdapter.getNameSelectElement(indexElement, table.CurrentRow.Index).NameCinema;
+                comboBox1.Text = tableAdapter.getNameSelectElement(indexElement, table.CurrentRow.Index).NameCinema;
             }
             catch (Exception exp)
             {
@@ -137,7 +137,7 @@ namespace DataBaseCinema
                 DataGridView table = (DataGridView)indexTable;
 
                 //Надо искать активную вкладку
-                textSearch.Text = tableAdapter.getNameSelectElement(indexElement, table.CurrentRow.Index).NameCinema;
+                comboBox1.Text = tableAdapter.getNameSelectElement(indexElement, table.CurrentRow.Index).NameCinema;
             }
             catch (Exception exp)
             {
@@ -161,6 +161,49 @@ namespace DataBaseCinema
             {
                 Console.WriteLine("Предупреждение, НЕ ОШИБКА!");
             }
+        }
+
+        //Импорт данных
+        private void importFile_Click(object sender, EventArgs e)
+        {
+            MyData.listValue.Clear();
+            DataBaseCinema.Data.form.ImportForm importForm = new DataBaseCinema.Data.form.ImportForm();
+            importForm.Owner = this;
+            importForm.ShowDialog();
+            if(MyData.listValue.Count == 0)
+            {
+                Console.WriteLine("Данных не импортированно!");
+                return;
+            }
+
+            tableAdapter.addListImport(this);
+
+        }
+
+    
+
+        private void comboBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (comboBox1.Text.Length != 0)
+                comboBox1.DroppedDown = false;
+
+            comboBox1.Items.Clear();
+
+            //получаем таблицу
+            Control indexTable = allCinemaControl.SelectedTab.Controls[0];
+            //Получаем номер таблицы
+            int indexElement = allCinemaControl.SelectedIndex;
+            DataGridView table = (DataGridView)indexTable;
+
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                if (table.Rows[i].Cells[0].Value.ToString().IndexOf(comboBox1.Text) > -1)
+                    comboBox1.Items.Add(table.Rows[i].Cells[0].Value);
+            }
+
+            comboBox1.SelectionStart = comboBox1.Text.Length;
+            comboBox1.DroppedDown = true;
+            Cursor.Current = Cursors.Default;
         }
     }
 }

@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.search = new System.Windows.Forms.Button();
-            this.textSearch = new System.Windows.Forms.TextBox();
             this.addCinema = new System.Windows.Forms.Button();
             this.deleteCinema = new System.Windows.Forms.Button();
             this.changeCinema = new System.Windows.Forms.Button();
@@ -45,6 +43,7 @@
             this.cheduleCheckPage = new System.Windows.Forms.TabPage();
             this.cheduleCheckTable = new System.Windows.Forms.DataGridView();
             this.labelDate = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.allCinemaControl.SuspendLayout();
             this.allCinemaPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.allCinemaTable)).BeginInit();
@@ -56,29 +55,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.cheduleCheckTable)).BeginInit();
             this.SuspendLayout();
             // 
-            // search
-            // 
-            this.search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.search.Location = new System.Drawing.Point(713, 11);
-            this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(75, 23);
-            this.search.TabIndex = 0;
-            this.search.Text = "Найти";
-            this.search.UseVisualStyleBackColor = true;
-            // 
-            // textSearch
-            // 
-            this.textSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textSearch.Location = new System.Drawing.Point(13, 13);
-            this.textSearch.Multiline = true;
-            this.textSearch.Name = "textSearch";
-            this.textSearch.Size = new System.Drawing.Size(694, 39);
-            this.textSearch.TabIndex = 1;
-            // 
             // addCinema
             // 
-            this.addCinema.Location = new System.Drawing.Point(12, 59);
+            this.addCinema.Location = new System.Drawing.Point(12, 40);
             this.addCinema.Name = "addCinema";
             this.addCinema.Size = new System.Drawing.Size(75, 23);
             this.addCinema.TabIndex = 2;
@@ -88,7 +67,7 @@
             // 
             // deleteCinema
             // 
-            this.deleteCinema.Location = new System.Drawing.Point(174, 58);
+            this.deleteCinema.Location = new System.Drawing.Point(174, 39);
             this.deleteCinema.Name = "deleteCinema";
             this.deleteCinema.Size = new System.Drawing.Size(75, 23);
             this.deleteCinema.TabIndex = 3;
@@ -98,7 +77,7 @@
             // 
             // changeCinema
             // 
-            this.changeCinema.Location = new System.Drawing.Point(93, 58);
+            this.changeCinema.Location = new System.Drawing.Point(93, 39);
             this.changeCinema.Name = "changeCinema";
             this.changeCinema.Size = new System.Drawing.Size(75, 23);
             this.changeCinema.TabIndex = 4;
@@ -109,17 +88,18 @@
             // importFile
             // 
             this.importFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.importFile.Location = new System.Drawing.Point(559, 58);
+            this.importFile.Location = new System.Drawing.Point(645, 40);
             this.importFile.Name = "importFile";
             this.importFile.Size = new System.Drawing.Size(148, 23);
             this.importFile.TabIndex = 5;
             this.importFile.Text = "Импортировать данные";
             this.importFile.UseVisualStyleBackColor = true;
+            this.importFile.Click += new System.EventHandler(this.importFile_Click);
             // 
             // saveChange
             // 
             this.saveChange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.saveChange.Location = new System.Drawing.Point(422, 59);
+            this.saveChange.Location = new System.Drawing.Point(508, 41);
             this.saveChange.Name = "saveChange";
             this.saveChange.Size = new System.Drawing.Size(131, 23);
             this.saveChange.TabIndex = 6;
@@ -135,10 +115,10 @@
             this.allCinemaControl.Controls.Add(this.expectCheckPage);
             this.allCinemaControl.Controls.Add(this.passCheckPage);
             this.allCinemaControl.Controls.Add(this.cheduleCheckPage);
-            this.allCinemaControl.Location = new System.Drawing.Point(3, 87);
+            this.allCinemaControl.Location = new System.Drawing.Point(3, 70);
             this.allCinemaControl.Name = "allCinemaControl";
             this.allCinemaControl.SelectedIndex = 0;
-            this.allCinemaControl.Size = new System.Drawing.Size(797, 394);
+            this.allCinemaControl.Size = new System.Drawing.Size(797, 411);
             this.allCinemaControl.TabIndex = 7;
             // 
             // allCinemaPage
@@ -147,7 +127,7 @@
             this.allCinemaPage.Location = new System.Drawing.Point(4, 22);
             this.allCinemaPage.Name = "allCinemaPage";
             this.allCinemaPage.Padding = new System.Windows.Forms.Padding(3);
-            this.allCinemaPage.Size = new System.Drawing.Size(789, 368);
+            this.allCinemaPage.Size = new System.Drawing.Size(789, 385);
             this.allCinemaPage.TabIndex = 0;
             this.allCinemaPage.Text = "Все фирмы";
             this.allCinemaPage.UseVisualStyleBackColor = true;
@@ -161,7 +141,7 @@
             this.allCinemaTable.Location = new System.Drawing.Point(3, 3);
             this.allCinemaTable.Name = "allCinemaTable";
             this.allCinemaTable.ReadOnly = true;
-            this.allCinemaTable.Size = new System.Drawing.Size(783, 362);
+            this.allCinemaTable.Size = new System.Drawing.Size(783, 379);
             this.allCinemaTable.TabIndex = 1;
             this.allCinemaTable.SelectionChanged += new System.EventHandler(this.allCinemaTable_SelectionChanged);
             // 
@@ -241,17 +221,29 @@
             // 
             this.labelDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelDate.AutoSize = true;
-            this.labelDate.Location = new System.Drawing.Point(659, 84);
+            this.labelDate.Location = new System.Drawing.Point(659, 66);
             this.labelDate.Name = "labelDate";
             this.labelDate.Size = new System.Drawing.Size(137, 13);
             this.labelDate.TabIndex = 8;
             this.labelDate.Text = "Дата сегодня: 00.00.0000";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(12, 12);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(781, 21);
+            this.comboBox1.TabIndex = 9;
+            this.comboBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.comboBox1_KeyUp);
             // 
             // GeneralForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 480);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.labelDate);
             this.Controls.Add(this.allCinemaControl);
             this.Controls.Add(this.saveChange);
@@ -259,8 +251,6 @@
             this.Controls.Add(this.changeCinema);
             this.Controls.Add(this.deleteCinema);
             this.Controls.Add(this.addCinema);
-            this.Controls.Add(this.textSearch);
-            this.Controls.Add(this.search);
             this.MinimumSize = new System.Drawing.Size(670, 300);
             this.Name = "GeneralForm";
             this.Text = "Cinema Base";
@@ -280,9 +270,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button search;
-        private System.Windows.Forms.TextBox textSearch;
         private System.Windows.Forms.Button addCinema;
         private System.Windows.Forms.Button deleteCinema;
         private System.Windows.Forms.Button changeCinema;
@@ -298,6 +285,7 @@
         protected internal System.Windows.Forms.DataGridView passCheckTable;
         private System.Windows.Forms.DataGridView cheduleCheckTable;
         private System.Windows.Forms.Label labelDate;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

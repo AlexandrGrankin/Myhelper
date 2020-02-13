@@ -53,6 +53,27 @@ namespace DataBaseCinema
 
             MyData.value = null;
         }
+        public void addListImport(GeneralForm form)
+        {
+            for (int i = 0; i < MyData.listValue.Count; i++)
+            {
+                DateTime dateTime = new DateTime(MyData.listValue.ElementAt<DBCinema>(i).YearCheckNext,
+                    MyData.listValue.ElementAt<DBCinema>(i).MounthCheckNext,
+                    MyData.listValue.ElementAt<DBCinema>(i).DayCheckNext
+                    );
+
+                allCinemaTable.add(MyData.listValue.ElementAt<DBCinema>(i));
+                if (dateTime < MyData.date)
+                    expectCheckTable.add(MyData.listValue.ElementAt<DBCinema>(i));
+                else
+                    passCheckTable.add(MyData.listValue.ElementAt<DBCinema>(i));
+                //особое условие по чек боксу =)
+                if (MyData.listValue.ElementAt<DBCinema>(i).Planned)
+                    cheduleCheckTable.add(MyData.listValue.ElementAt<DBCinema>(i));
+
+            }
+            MyData.listValue.Clear();
+        }
         //Изменить запись
         public void change(GeneralForm form, int indexTable, int indexElement)
         {
