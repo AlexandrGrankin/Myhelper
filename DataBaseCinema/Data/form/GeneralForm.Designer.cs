@@ -44,6 +44,7 @@
             this.cheduleCheckTable = new System.Windows.Forms.DataGridView();
             this.labelDate = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.allCinemaControl.SuspendLayout();
             this.allCinemaPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.allCinemaTable)).BeginInit();
@@ -57,7 +58,7 @@
             // 
             // addCinema
             // 
-            this.addCinema.Location = new System.Drawing.Point(12, 40);
+            this.addCinema.Location = new System.Drawing.Point(7, 65);
             this.addCinema.Name = "addCinema";
             this.addCinema.Size = new System.Drawing.Size(75, 23);
             this.addCinema.TabIndex = 2;
@@ -67,7 +68,7 @@
             // 
             // deleteCinema
             // 
-            this.deleteCinema.Location = new System.Drawing.Point(174, 39);
+            this.deleteCinema.Location = new System.Drawing.Point(169, 64);
             this.deleteCinema.Name = "deleteCinema";
             this.deleteCinema.Size = new System.Drawing.Size(75, 23);
             this.deleteCinema.TabIndex = 3;
@@ -77,7 +78,7 @@
             // 
             // changeCinema
             // 
-            this.changeCinema.Location = new System.Drawing.Point(93, 39);
+            this.changeCinema.Location = new System.Drawing.Point(88, 64);
             this.changeCinema.Name = "changeCinema";
             this.changeCinema.Size = new System.Drawing.Size(75, 23);
             this.changeCinema.TabIndex = 4;
@@ -88,7 +89,7 @@
             // importFile
             // 
             this.importFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.importFile.Location = new System.Drawing.Point(645, 40);
+            this.importFile.Location = new System.Drawing.Point(640, 65);
             this.importFile.Name = "importFile";
             this.importFile.Size = new System.Drawing.Size(148, 23);
             this.importFile.TabIndex = 5;
@@ -99,7 +100,7 @@
             // saveChange
             // 
             this.saveChange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.saveChange.Location = new System.Drawing.Point(508, 41);
+            this.saveChange.Location = new System.Drawing.Point(503, 66);
             this.saveChange.Name = "saveChange";
             this.saveChange.Size = new System.Drawing.Size(131, 23);
             this.saveChange.TabIndex = 6;
@@ -115,10 +116,10 @@
             this.allCinemaControl.Controls.Add(this.expectCheckPage);
             this.allCinemaControl.Controls.Add(this.passCheckPage);
             this.allCinemaControl.Controls.Add(this.cheduleCheckPage);
-            this.allCinemaControl.Location = new System.Drawing.Point(3, 70);
+            this.allCinemaControl.Location = new System.Drawing.Point(3, 107);
             this.allCinemaControl.Name = "allCinemaControl";
             this.allCinemaControl.SelectedIndex = 0;
-            this.allCinemaControl.Size = new System.Drawing.Size(797, 411);
+            this.allCinemaControl.Size = new System.Drawing.Size(797, 374);
             this.allCinemaControl.TabIndex = 7;
             // 
             // allCinemaPage
@@ -127,7 +128,7 @@
             this.allCinemaPage.Location = new System.Drawing.Point(4, 22);
             this.allCinemaPage.Name = "allCinemaPage";
             this.allCinemaPage.Padding = new System.Windows.Forms.Padding(3);
-            this.allCinemaPage.Size = new System.Drawing.Size(789, 385);
+            this.allCinemaPage.Size = new System.Drawing.Size(789, 348);
             this.allCinemaPage.TabIndex = 0;
             this.allCinemaPage.Text = "Все фирмы";
             this.allCinemaPage.UseVisualStyleBackColor = true;
@@ -141,7 +142,7 @@
             this.allCinemaTable.Location = new System.Drawing.Point(3, 3);
             this.allCinemaTable.Name = "allCinemaTable";
             this.allCinemaTable.ReadOnly = true;
-            this.allCinemaTable.Size = new System.Drawing.Size(783, 379);
+            this.allCinemaTable.Size = new System.Drawing.Size(783, 342);
             this.allCinemaTable.TabIndex = 1;
             this.allCinemaTable.SelectionChanged += new System.EventHandler(this.allCinemaTable_SelectionChanged);
             // 
@@ -151,7 +152,7 @@
             this.expectCheckPage.Location = new System.Drawing.Point(4, 22);
             this.expectCheckPage.Name = "expectCheckPage";
             this.expectCheckPage.Padding = new System.Windows.Forms.Padding(3);
-            this.expectCheckPage.Size = new System.Drawing.Size(789, 368);
+            this.expectCheckPage.Size = new System.Drawing.Size(789, 348);
             this.expectCheckPage.TabIndex = 1;
             this.expectCheckPage.Text = "Ожидают проверки";
             this.expectCheckPage.UseVisualStyleBackColor = true;
@@ -165,7 +166,7 @@
             this.expectCheckTable.Location = new System.Drawing.Point(3, 3);
             this.expectCheckTable.Name = "expectCheckTable";
             this.expectCheckTable.ReadOnly = true;
-            this.expectCheckTable.Size = new System.Drawing.Size(783, 362);
+            this.expectCheckTable.Size = new System.Drawing.Size(783, 342);
             this.expectCheckTable.TabIndex = 0;
             this.expectCheckTable.SelectionChanged += new System.EventHandler(this.expectCheckTable_SelectionChanged);
             // 
@@ -175,7 +176,7 @@
             this.passCheckPage.Location = new System.Drawing.Point(4, 22);
             this.passCheckPage.Name = "passCheckPage";
             this.passCheckPage.Padding = new System.Windows.Forms.Padding(3);
-            this.passCheckPage.Size = new System.Drawing.Size(789, 368);
+            this.passCheckPage.Size = new System.Drawing.Size(789, 348);
             this.passCheckPage.TabIndex = 2;
             this.passCheckPage.Text = "Прошли проверку";
             this.passCheckPage.UseVisualStyleBackColor = true;
@@ -189,7 +190,7 @@
             this.passCheckTable.Location = new System.Drawing.Point(3, 3);
             this.passCheckTable.Name = "passCheckTable";
             this.passCheckTable.ReadOnly = true;
-            this.passCheckTable.Size = new System.Drawing.Size(783, 362);
+            this.passCheckTable.Size = new System.Drawing.Size(783, 342);
             this.passCheckTable.TabIndex = 0;
             this.passCheckTable.SelectionChanged += new System.EventHandler(this.passCheckTable_SelectionChanged);
             // 
@@ -199,7 +200,7 @@
             this.cheduleCheckPage.Location = new System.Drawing.Point(4, 22);
             this.cheduleCheckPage.Name = "cheduleCheckPage";
             this.cheduleCheckPage.Padding = new System.Windows.Forms.Padding(3);
-            this.cheduleCheckPage.Size = new System.Drawing.Size(789, 368);
+            this.cheduleCheckPage.Size = new System.Drawing.Size(789, 348);
             this.cheduleCheckPage.TabIndex = 3;
             this.cheduleCheckPage.Text = "Запланированная проверка";
             this.cheduleCheckPage.UseVisualStyleBackColor = true;
@@ -213,7 +214,7 @@
             this.cheduleCheckTable.Location = new System.Drawing.Point(3, 3);
             this.cheduleCheckTable.Name = "cheduleCheckTable";
             this.cheduleCheckTable.ReadOnly = true;
-            this.cheduleCheckTable.Size = new System.Drawing.Size(783, 362);
+            this.cheduleCheckTable.Size = new System.Drawing.Size(783, 342);
             this.cheduleCheckTable.TabIndex = 0;
             this.cheduleCheckTable.SelectionChanged += new System.EventHandler(this.cheduleCheckTable_SelectionChanged);
             // 
@@ -221,7 +222,7 @@
             // 
             this.labelDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelDate.AutoSize = true;
-            this.labelDate.Location = new System.Drawing.Point(659, 66);
+            this.labelDate.Location = new System.Drawing.Point(654, 91);
             this.labelDate.Name = "labelDate";
             this.labelDate.Size = new System.Drawing.Size(137, 13);
             this.labelDate.TabIndex = 8;
@@ -231,18 +232,35 @@
             // 
             this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 12);
+            this.comboBox1.Location = new System.Drawing.Point(3, 38);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(781, 21);
+            this.comboBox1.Size = new System.Drawing.Size(790, 21);
             this.comboBox1.TabIndex = 9;
-            this.comboBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.comboBox1_KeyUp);
+            this.comboBox1.TabStop = false;
+            this.comboBox1.Visible = false;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(3, 12);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(790, 46);
+            this.textBox1.TabIndex = 10;
+            this.textBox1.Text = "Начните писать текст для поиска по таблице...";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
             // 
             // GeneralForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 480);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.labelDate);
             this.Controls.Add(this.allCinemaControl);
@@ -286,6 +304,7 @@
         private System.Windows.Forms.DataGridView cheduleCheckTable;
         private System.Windows.Forms.Label labelDate;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

@@ -28,6 +28,8 @@ namespace DataBaseCinema
             MyTableCreate cheduleCheckTables = new MyTableCreate(cheduleCheckTable, cheduleCheckPage, "Запланированная проверка");
             //Передаем управление адаптеру
             tableAdapter = new MyTableAdapter(allCinemaTables, expectCheckTables, passCheckTables, cheduleCheckTables);
+
+            //comboBox1.DataSource = list;
         }
 
         private void GeneralForm_Load(object sender, EventArgs e)
@@ -67,9 +69,10 @@ namespace DataBaseCinema
 
             tableAdapter.del(this, indexElement, table.CurrentRow.Index);
         }
-
+        //Заполняет comboBox1 по нажатию на таблицу
         private void allCinemaTable_SelectionChanged(object sender, EventArgs e)
         {
+            /*
             //Выкидывает ошибку при выделении и сортировке
             try
             {
@@ -86,10 +89,12 @@ namespace DataBaseCinema
             {
                 Console.WriteLine("Предупреждение, НЕ ОШИБКА!");
             }
+            */
         }
-
+        //Заполняет comboBox1 по нажатию на таблицу
         private void expectCheckTable_SelectionChanged(object sender, EventArgs e)
         {
+            /*
             try
             {
                 //получаем таблицу
@@ -105,10 +110,12 @@ namespace DataBaseCinema
             {
                 Console.WriteLine("Предупреждение, НЕ ОШИБКА!");
             }
+            */
         }
-
+        //Заполняет comboBox1 по нажатию на таблицу
         private void passCheckTable_SelectionChanged(object sender, EventArgs e)
         {
+            /*
             try
             {
                 //получаем таблицу
@@ -124,10 +131,12 @@ namespace DataBaseCinema
             {
                 Console.WriteLine("Предупреждение, НЕ ОШИБКА!");
             }
+            */
         }
-
+        //Заполняет comboBox1 по нажатию на таблицу
         private void cheduleCheckTable_SelectionChanged(object sender, EventArgs e)
         {
+            /*
             try
             {
                 //получаем таблицу
@@ -143,6 +152,7 @@ namespace DataBaseCinema
             {
                 Console.WriteLine("Предупреждение, НЕ ОШИБКА!");
             }
+            */
         }
 
         private void changeCinema_Click(object sender, EventArgs e)
@@ -182,10 +192,43 @@ namespace DataBaseCinema
 
     
 
-        private void comboBox1_KeyUp(object sender, KeyEventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.Text.Length != 0)
+           
+            String str ="";
+
+            try
+            {
+                Console.WriteLine(comboBox1.SelectedItem.ToString());
+                str = comboBox1.SelectedItem.ToString();
+            }
+            catch(Exception exp) { }
+            comboBox1.Items.Clear();
+            //получаем таблицу
+            Control indexTable = allCinemaControl.SelectedTab.Controls[0];
+            //Получаем номер таблицы
+            int indexElement = allCinemaControl.SelectedIndex;
+            DataGridView table = (DataGridView)indexTable;
+
+            //перехоd!!!!!!!!!!!!!!!!!!!!!!!!
+            for(int i = 0; i < table.Rows.Count; i++)
+            {
+                if (table.Rows[i].Cells[0].Value.ToString().Equals(str))
+                {
+                    table.CurrentCell = table.Rows[i].Cells[0];
+                    textBox1.Text = "Начните писать текст для поиска по таблице...";
+                    break;
+                }
+            }
+        }
+
+        BindingList<String> list = new BindingList<string>();
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Length != 0 && !textBox1.Text.Equals("Начните писать текст для поиска по таблице..."))
                 comboBox1.DroppedDown = false;
+            else return;
 
             comboBox1.Items.Clear();
 
@@ -197,13 +240,25 @@ namespace DataBaseCinema
 
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                if (table.Rows[i].Cells[0].Value.ToString().IndexOf(comboBox1.Text) > -1)
+                if (table.Rows[i].Cells[0].Value.ToString().IndexOf(textBox1.Text) > -1)
                     comboBox1.Items.Add(table.Rows[i].Cells[0].Value);
             }
 
-            comboBox1.SelectionStart = comboBox1.Text.Length;
+            //comboBox1.SelectionStart = comboBox1.Text.Length;
             comboBox1.DroppedDown = true;
             Cursor.Current = Cursors.Default;
         }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+        }
+        /*
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            MyData.forSearch = textBox1.Text;
+            textBox1.Text = "Начните писать текст для поиска по таблице...";
+        }
+        */
     }
 }
