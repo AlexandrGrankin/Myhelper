@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataBaseCinema
 {
-
+    [Serializable]
     public class DBCinema {
         //Название
         private string nameCinema;

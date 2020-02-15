@@ -30,7 +30,6 @@ namespace DataBaseCinema
             public static int year { get; set; }
             public static DateTime date { get; set; }
 
-            public static String forSearch = "";
 
 
         }

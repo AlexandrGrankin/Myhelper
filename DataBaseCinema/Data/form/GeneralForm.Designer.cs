@@ -104,8 +104,9 @@
             this.saveChange.Name = "saveChange";
             this.saveChange.Size = new System.Drawing.Size(131, 23);
             this.saveChange.TabIndex = 6;
-            this.saveChange.Text = "Сохранить изменения";
+            this.saveChange.Text = "Сохранить";
             this.saveChange.UseVisualStyleBackColor = true;
+            this.saveChange.Click += new System.EventHandler(this.saveChange_Click);
             // 
             // allCinemaControl
             // 

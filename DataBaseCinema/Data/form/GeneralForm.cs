@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
 using static DataBaseCinema.Program;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 namespace DataBaseCinema
 {
@@ -16,19 +18,20 @@ namespace DataBaseCinema
     {
         //Адаптер для таблиц
         MyTableAdapter tableAdapter;
-
+        MyTableCreate allCinemaTables;
         public GeneralForm()
         {
             InitializeComponent();
 
             //Создали таблицы
-            MyTableCreate allCinemaTables = new MyTableCreate(allCinemaTable, allCinemaPage, "Все фирмы");
+            allCinemaTables = new MyTableCreate(allCinemaTable, allCinemaPage, "Все фирмы");
             MyTableCreate expectCheckTables = new MyTableCreate(expectCheckTable, expectCheckPage, "Ожидают проверки");
             MyTableCreate passCheckTables = new MyTableCreate(passCheckTable, passCheckPage, "Прошли проверку");
             MyTableCreate cheduleCheckTables = new MyTableCreate(cheduleCheckTable, cheduleCheckPage, "Запланированная проверка");
             //Передаем управление адаптеру
             tableAdapter = new MyTableAdapter(allCinemaTables, expectCheckTables, passCheckTables, cheduleCheckTables);
 
+            loadDataBase();
             //comboBox1.DataSource = list;
         }
 
@@ -190,8 +193,6 @@ namespace DataBaseCinema
 
         }
 
-    
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
            
@@ -253,12 +254,49 @@ namespace DataBaseCinema
         {
             textBox1.Text = "";
         }
-        /*
-        private void textBox1_Leave(object sender, EventArgs e)
+
+        private void saveChange_Click(object sender, EventArgs e)
         {
-            MyData.forSearch = textBox1.Text;
-            textBox1.Text = "Начните писать текст для поиска по таблице...";
+
+            DBCinema[] db = new DBCinema[allCinemaTables.data.Count];
+
+            for(int i = 0; i < allCinemaTables.data.Count; i++)
+            {
+                db[i] = allCinemaTables.data[i];
+            }
+
+
+            BinaryFormatter formatter = new BinaryFormatter();
+
+            using (FileStream fs = new FileStream("DataBase.dat", FileMode.OpenOrCreate))
+            {
+                // сериализуем весь массив people
+                formatter.Serialize(fs, db);
+
+                Console.WriteLine("Объект сериализован");
+            }
         }
-        */
+
+        private void loadDataBase()
+        {
+
+            BinaryFormatter formatter = new BinaryFormatter();
+            // десериализация
+            using (FileStream fs = new FileStream("DataBase.dat", FileMode.OpenOrCreate))
+            {
+                DBCinema[] deserilizePeople = (DBCinema[])formatter.Deserialize(fs);
+
+                MyData.listValue.Clear();
+
+                foreach (DBCinema p in deserilizePeople)
+                {
+                    MyData.listValue.Add(p);
+                }
+            }
+
+            tableAdapter.addListImport(this);
+            
+        }
+
     }
 }
