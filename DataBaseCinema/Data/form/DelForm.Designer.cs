@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DelForm));
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -374,9 +375,9 @@
             this.checkBoxPlanned.AutoSize = true;
             this.checkBoxPlanned.Location = new System.Drawing.Point(16, 140);
             this.checkBoxPlanned.Name = "checkBoxPlanned";
-            this.checkBoxPlanned.Size = new System.Drawing.Size(113, 17);
+            this.checkBoxPlanned.Size = new System.Drawing.Size(111, 17);
             this.checkBoxPlanned.TabIndex = 27;
-            this.checkBoxPlanned.Text = "checkBoxPlanned";
+            this.checkBoxPlanned.Text = "Запланированно";
             this.checkBoxPlanned.UseVisualStyleBackColor = true;
             // 
             // DelForm
@@ -390,6 +391,7 @@
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.add);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "DelForm";
             this.Text = "Удалить";

@@ -40,30 +40,39 @@ namespace DataBaseCinema
             if (MyData.value == null)
                 return;
 
-            DateTime dateTime = new DateTime(MyData.value.YearCheckNext, MyData.value.MounthCheckNext, MyData.value.DayCheckNext);
+            DateTime dateTime = new DateTime(MyData.value.YearCheck, MyData.value.MounthCheck, MyData.value.DayCheck);
+            DateTime dateTimeCheck = new DateTime(MyData.value.YearCheck, MyData.value.MounthCheck, MyData.value.DayCheck);
+
+            dateTimeCheck = dateTimeCheck.AddYears(3);
 
             allCinemaTable.add();
-            if(dateTime < MyData.date)
+            if (dateTimeCheck < DateTime.Now)
                 expectCheckTable.add();
             else
                 passCheckTable.add();
             //особое условие по чек боксу =)
-            if(MyData.value.Planned)
-            cheduleCheckTable.add();
+            if (MyData.value.Planned)
+                cheduleCheckTable.add();
 
             MyData.value = null;
         }
         public void addListImport(GeneralForm form)
         {
+            
             for (int i = 0; i < MyData.listValue.Count; i++)
             {
-                DateTime dateTime = new DateTime(MyData.listValue.ElementAt<DBCinema>(i).YearCheckNext,
-                    MyData.listValue.ElementAt<DBCinema>(i).MounthCheckNext,
-                    MyData.listValue.ElementAt<DBCinema>(i).DayCheckNext
-                    );
+                
+                DateTime dateTimeCheck = new DateTime(MyData.listValue.ElementAt<DBCinema>(i).YearCheck,
+                   MyData.listValue.ElementAt<DBCinema>(i).MounthCheck,
+                   MyData.listValue.ElementAt<DBCinema>(i).DayCheck
+                   );
+
+                
+                delName(MyData.listValue.ElementAt<DBCinema>(i).NameCinema);
+                dateTimeCheck = dateTimeCheck.AddYears(3);
 
                 allCinemaTable.add(MyData.listValue.ElementAt<DBCinema>(i));
-                if (dateTime < MyData.date)
+                if (dateTimeCheck < DateTime.Now)
                     expectCheckTable.add(MyData.listValue.ElementAt<DBCinema>(i));
                 else
                     passCheckTable.add(MyData.listValue.ElementAt<DBCinema>(i));
@@ -77,13 +86,13 @@ namespace DataBaseCinema
         //Изменить запись
         public void change(GeneralForm form, int indexTable, int indexElement)
         {
-            MyData.value = null;             
+            MyData.value = null;
             DBCinema element = getNameSelectElement(indexTable, indexElement);
 
             ChangeForm changeForm = new ChangeForm(element);
             changeForm.Owner = form;
 
-            
+
             if (DialogResult.OK == changeForm.ShowDialog())
             {
                 if (MyData.value == null)
@@ -124,6 +133,21 @@ namespace DataBaseCinema
                 passCheckTable.del(element);
                 cheduleCheckTable.del(element);
             }
+        }
+
+        public void delName(String name)
+        {
+            //Беру имя первой строки импорта, ищу в allcinema по имени если есть удаляю её вездеи добавляю, если нет то просто добавляю
+            if (allCinemaTable.searchName(name))
+            {
+                Console.WriteLine("Нашли по имени! Теперь нужно везде удалить по имени!");
+                allCinemaTable.delName(name);
+                expectCheckTable.delName(name);
+                passCheckTable.delName(name);
+                cheduleCheckTable.delName(name);
+                return;
+            }
+
         }
 
         //Определение выбраного элемента в активной таблице

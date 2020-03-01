@@ -1,7 +1,6 @@
 C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\bin\Debug\DataBaseCinema.exe.config
 C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\bin\Debug\DataBaseCinema.exe
 C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\bin\Debug\DataBaseCinema.pdb
-C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\obj\Debug\DataBaseCinema.csprojAssemblyReference.cache
 C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\obj\Debug\DataBaseCinema.Properties.Resources.resources
 C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\obj\Debug\DataBaseCinema.csproj.GenerateResource.cache
 C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\obj\Debug\DataBaseCinema.exe
@@ -16,3 +15,7 @@ C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\obj\Debug\DataBas
 C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\obj\Debug\DataBaseCinema.DelForm.resources
 C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\obj\Debug\DataBaseCinema.ChangeForm.resources
 C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\obj\Debug\DataBaseCinema.Data.form.ImportForm.resources
+C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\bin\Debug\EPPlus.dll
+C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\bin\Debug\EPPlus.xml
+C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\bin\Debug\DataBaseCinema.exe.CodeAnalysisLog.xml
+C:\Users\Grankin-AM\source\repos\DataBaseCinema\DataBaseCinema\bin\Debug\DataBaseCinema.exe.lastcodeanalysissucceeded

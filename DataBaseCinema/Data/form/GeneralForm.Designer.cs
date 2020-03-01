@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GeneralForm));
             this.addCinema = new System.Windows.Forms.Button();
             this.deleteCinema = new System.Windows.Forms.Button();
             this.changeCinema = new System.Windows.Forms.Button();
@@ -270,9 +271,10 @@
             this.Controls.Add(this.changeCinema);
             this.Controls.Add(this.deleteCinema);
             this.Controls.Add(this.addCinema);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(670, 300);
             this.Name = "GeneralForm";
-            this.Text = "Cinema Base";
+            this.Text = "MyHelper";
             this.Load += new System.EventHandler(this.GeneralForm_Load);
             this.allCinemaControl.ResumeLayout(false);
             this.allCinemaPage.ResumeLayout(false);

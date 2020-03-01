@@ -185,7 +185,7 @@ namespace DataBaseCinema
             importForm.ShowDialog();
             if(MyData.listValue.Count == 0)
             {
-                Console.WriteLine("Данных не импортированно!");
+                Console.WriteLine("Данные не импортированны!");
                 return;
             }
 
@@ -227,8 +227,12 @@ namespace DataBaseCinema
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            comboBox1.DroppedDown = false;
+            Console.WriteLine("work");
             if (textBox1.Text.Length != 0 && !textBox1.Text.Equals("Начните писать текст для поиска по таблице..."))
+            {
                 comboBox1.DroppedDown = false;
+            }
             else return;
 
             comboBox1.Items.Clear();
@@ -273,6 +277,7 @@ namespace DataBaseCinema
                 // сериализуем весь массив people
                 formatter.Serialize(fs, db);
 
+                MessageBox.Show("Сохранение данных прошло успешно!", "Сохранение...");
                 Console.WriteLine("Объект сериализован");
             }
         }
@@ -284,8 +289,12 @@ namespace DataBaseCinema
             // десериализация
             using (FileStream fs = new FileStream("DataBase.dat", FileMode.OpenOrCreate))
             {
-                DBCinema[] deserilizePeople = (DBCinema[])formatter.Deserialize(fs);
-
+                DBCinema[] deserilizePeople = new DBCinema[0];
+                try
+                {
+                    deserilizePeople = (DBCinema[])formatter.Deserialize(fs);
+                }catch(Exception exp)
+                {  }
                 MyData.listValue.Clear();
 
                 foreach (DBCinema p in deserilizePeople)

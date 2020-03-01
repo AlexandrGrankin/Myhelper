@@ -90,6 +90,29 @@ namespace DataBaseCinema
 
         }
 
+        public void delName(String name)
+        {
+            try
+            {
+                //Удаляем выбраный элемент
+                for (int i = 0; i < data.Count; i++)
+                {
+                    if (data[i].NameCinema.Equals(name))
+                    {
+                        data.Remove(data[i]);
+                        break;
+                    }
+                }
+
+                updateHeaders();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Элемент пуст, а хочешь что то удалить! Не критично, безопасно (уже)!");
+            }
+
+        }
+
         public void change(DBCinema dBCinema, DBCinema newDBCinema)
         {
             try
@@ -106,6 +129,17 @@ namespace DataBaseCinema
         {
             //Приравниваем текст с количеством данных
             page.Text = namePage + " (" + data.Count + ")";
+        }
+
+        public bool searchName(String name)
+        {
+
+            foreach (DBCinema s in data)
+            {
+                if (s.NameCinema.Equals(name))
+                    return true;
+            }
+            return false;
         }
 
     }
